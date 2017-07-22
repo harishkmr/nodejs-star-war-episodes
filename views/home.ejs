@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <% include partials/header.ejs %>
+  </head>
+  <body>
+    <% include partials/site_header.ejs %>
+    <h1 style="text-align: center;
+    padding-top: 135px;">A simple NodeJS Application which list out the Star Was Episodes</h1>
+    <div style="width: 100%;clear: both;padding-top: 40px;text-align: center;">
+      <a href="/episodes" class="movie-header" style="cursor: pointer;color: #000 !important;text-decoration: none !important;"> Star War Episodes</a>
+    </div>
+    <% include partials/scripts.ejs %>
+  </body>
+</html>

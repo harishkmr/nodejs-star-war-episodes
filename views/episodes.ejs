@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <% include partials/header.ejs %>
+  </head>
+  <body>
+    <% include partials/site_header.ejs %>
+      <!-- <div id="hero-image">
+        <h1 id="hero-title"><%= title %></h1>
+      </div> -->
+      <div id="posters-wrapper" class="content-padding clearfix">
+        <% for (var i = 0; i < episodes.length; i++) { %>
+          <div class="poster">
+            <a href="/episode/<%= episodes[i].episode_number %>">
+              <img src="/images/<%= episodes[i].poster %>" class="img-responsive">
+              <div class="poster-info-overlay">
+                <h3><%= episodes[i].title %></h3>
+                <h4>View More <i class="fa fa-arrow-right"></i></h4>
+              </div>
+            </a>
+          </div>    
+        <% } %>
+
+      </div>
+    <% include partials/scripts.ejs %>
+    <script type="text/javascript">
+      function slugify(text) {
+        return text.toString().toLowerCase()
+          .replace(/\s+/g, '-')        // Replace spaces with -
+          .replace(/[^\w\-]+/g, '')   // Remove all non-word chars
+          .replace(/\-\-+/g, '-')      // Replace multiple - with single -
+          .replace(/^-+/, '')          // Trim - from start of text
+          .replace(/-+$/, '');         // Trim - from end of text
+      }
+    </script>
+  </body>
+</html>
